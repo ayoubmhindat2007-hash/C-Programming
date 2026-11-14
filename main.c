@@ -3,34 +3,32 @@
 
 int main()
 {
-   // Permet de calculer et afficher ensuite la somme des elements d'un tableaude n elements .
+    // Augmente de 1 tous les elements d'un tableau .
 
-   int n ;
-   printf("veuillez saiser la taille de tableau : ");
-   scanf("%d" , &n);
+    int n ;
+    printf("veuillez saiser la taille de tableau : ");
+    scanf("%d" , &n);
+    if(n<=0)
+        return 1 ;
+    int T[n] ;
+    int *p ;
+    p = T ;
 
-   if(n<=1)
-    return 1 ;
+    // Remplissage
+    printf("veuillez saiser les elements de tableau :\n");
+    for(p=T;p<n+T;p++){
+        scanf("%d" , p);
+    }
 
-   int T[n];
-   int *p ;
-   p = T ;
+    // L'augmentation par 1
+    for(p=T;p<n+T;p++){
+        *p = *p + 1 ;
+    }
 
-   // Remplissage
-   printf("veuillez saiser les elements de tableau :\n");
-   for(p=T;p<n+T;p++){
-    scanf("%d" , p);
-   }
-
-   // La somme
-   int s = 0 ;
-   for(p=T;p<n+T;p++){
-    s = s + *p ;
-   }
-
-   // Affichage de la somme
-   printf("la somme de elements de tableau est : %d" , s);
-
+    // Affichage
+    printf("le neuveau tableau est :\n");
+    for(p=T;p<n+T;p++){
+        printf("\t%d" , *p);
+    }
     return 0;
 }
-
